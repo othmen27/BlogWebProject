@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <% if(titles.length!=0){ %>
+        <div class="container">
+            <% let i = 0 %>
+            <% for (let i = 0; i < titles.length; i++) {
+                console.log(titles[i]);
+            } %>
+            <% titles.forEach(title => {%>
+                <a href="<%=title%>" id="<%= i %>"><%= title %>></a><br>
+                <% i++ %>
+            <%}); %> 
+        </div>
+        <% } %>
+        <form action="/submit" method="post">
+            <fieldset><legend>Form</legend>
+                <label for="title">Title : </label><br>
+                <input type="text" name="title" id="title"><br>
+                <label for="des">Text : </label><br>
+                <textarea name="des" id="des" cols="40" rows="6"></textarea><br>
+                <input type="submit" id="submit" name="submit">
+            </fieldset>
+        </form>
+</body>
+</html>
