@@ -30,11 +30,10 @@ function readBlogs(callback) {
 
         i = 0;
         while (result2.indexOf("text=") !== -1) {
-            texts[i] = result2.substring(result2.indexOf("text=") + 5, result2.indexOf("title="));
-            result2 = result2.substring(result2.indexOf("text=") + 5, result2.length);
+            result2 = result2.substring(result2.indexOf("text=") + 5,result2.length)
+            texts[i] = result2.substring(0, result2.indexOf("title="));
             i += 1;
         }
-
         callback(titles, texts);
     });
 }
@@ -89,17 +88,21 @@ fs.readFile("blogs.txt",function(err, data){
 
     i = 0;
     while (result2.indexOf("text=") !== -1) {
-        texts[i] = result2.substring(result2.indexOf("text=") + 5, result2.indexOf("title="));
-        result2 = result2.substring(result2.indexOf("text=") + 5, result2.length);
+        result2 = result2.substring(result2.indexOf("text=") + 5,result2.length)
+        if(result2.indexOf("title=")!=-1){
+        texts[i] = result2.substring(0, result2.indexOf("title="));}
+        else{texts[i] = result2.substring(0,result2.length)}
         i += 1;
     }
     for (let i = 0; i < titles.length; i++) {
         let string = titles[i]
         let fstr = string.split(" ").join("")
-        console.log("/"+String(fstr));
+        console.log(texts[i])
         app.get("/"+String(fstr), (req,res) =>{
             let ti = titles[i]
             let te = texts[i]
+            console.log(te);
+            
             res.render("blog.ejs",{ti:ti,te:te})
         })
     }
