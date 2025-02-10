@@ -67,7 +67,43 @@ app.post("/submit", (req, res) => {
     });
     res.redirect("/");
 });
+fs.readFile("blogs.txt",function(err, data){
+    if(err){
+        if (err.code === "ENOENT") {
+            data = "";
+        } else {
+            throw err;
+        }
+    }
+    let titles = [];
+    let texts = [];
+    let result1 = String(data);
+    let result2 = String(data);
+    let i = 0;
 
+    while (result1.indexOf("title=") !== -1) {
+        titles[i] = result1.substring(result1.indexOf("title=") + 7, result1.indexOf("text="));
+        result1 = result1.substring(result1.indexOf("text=") + 5, result1.length);
+        i += 1;
+    }
+
+    i = 0;
+    while (result2.indexOf("text=") !== -1) {
+        texts[i] = result2.substring(result2.indexOf("text=") + 5, result2.indexOf("title="));
+        result2 = result2.substring(result2.indexOf("text=") + 5, result2.length);
+        i += 1;
+    }
+    for (let i = 0; i < titles.length; i++) {
+        let string = titles[i]
+        let fstr = string.split(" ").join("")
+        console.log("/"+String(fstr));
+        app.get("/"+String(fstr), (req,res) =>{
+            let ti = titles[i]
+            let te = texts[i]
+            res.render("blog.ejs",{ti:ti,te:te})
+        })
+    }
+})
 app.listen(port, () => {
     console.log(`Listening on port ${port}`);
 });

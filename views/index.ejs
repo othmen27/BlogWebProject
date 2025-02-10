@@ -13,8 +13,11 @@
             <% for (let i = 0; i < titles.length; i++) {
                 console.log(titles[i]);
             } %>
-            <% titles.forEach(title => {%>
-                <a href="<%=title%>" id="<%= i %>"><%= title %>></a><br>
+            <% titles.forEach(title => {
+                let string = title
+                let res = string.split(" ").join("");
+                %>
+                <a href="<%=res%>" id="<%= i %>"><%= title %>></a><br>
                 <% i++ %>
             <%}); %> 
         </div>
@@ -29,4 +32,7 @@
             </fieldset>
         </form>
 </body>
+<script>
+
+</script>
 </html>
