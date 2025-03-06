@@ -15,5 +15,14 @@
     "ejs": "^3.1.10",
     "express": "^4.21.2",
     "fs": "^0.0.1-security"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/othmen27/BlogWebProject.git"
+  },
+  "bugs": {
+    "url": "https://github.com/othmen27/BlogWebProject/issues"
+  },
+  "homepage": "https://github.com/othmen27/BlogWebProject#readme"
 }

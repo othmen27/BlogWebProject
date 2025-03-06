@@ -1,15 +1,159 @@
-.container{
-    width: 50%;
-    margin: auto;
-}
-form{
-    margin: auto;
-    width: 50%;
-
-}
-input{
-    width: 80%;
-}
-textarea{
-    width: 80%;
-}
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #007BFF;
+    transition: color 0.3s ease;
+  }
+  
+  a:hover {
+    color: #0056b3;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .container h1 {
+    margin-top: 0;
+    font-size: 2.5rem;
+    color: #333;
+    animation: fadeInDown 1s ease-in-out;
+  }
+  
+  .container p {
+    color: #666;
+    animation: fadeInUp 1s ease-in-out;
+  }
+  
+  /* Blog Post Links */
+  .container a {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    background: #f1f1f1;
+    border-radius: 5px;
+    color: #333;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  
+  .container a:hover {
+    background: #007BFF;
+    color: #fff;
+    transform: translateX(10px);
+  }
+  
+  /* Form Styles */
+  form {
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 1s ease-in-out;
+  }
+  
+  form fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  form legend {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  form input[type="text"],
+  form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+  
+  form input[type="text"]:focus,
+  form textarea:focus {
+    border-color: #007BFF;
+    outline: none;
+  }
+  
+  form textarea {
+    resize: vertical;
+    min-height: 150px;
+  }
+  
+  form input[type="submit"] {
+    background: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+  }
+  
+  form input[type="submit"]:hover {
+    background: #0056b3;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
