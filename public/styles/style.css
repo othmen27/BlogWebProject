@@ -39,8 +39,6 @@ body {
     color: #666;
     animation: fadeInUp 1s ease-in-out;
   }
-  
-  /* Blog Post Links */
   .container a {
     display: block;
     margin: 10px 0;
@@ -57,7 +55,6 @@ body {
     transform: translateX(10px);
   }
   
-  /* Form Styles */
   form {
     width: 90%;
     max-width: 600px;
@@ -125,8 +122,7 @@ body {
   form input[type="submit"]:hover {
     background: #0056b3;
   }
-  
-  /* Animations */
+
   @keyframes fadeIn {
     from {
       opacity: 0;
